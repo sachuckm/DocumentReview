@@ -1,0 +1,29 @@
+.displayAreaCmp {
+    position: relative;
+    width : 100%;
+    height: 40%;
+    background-color: aliceblue;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.textStyle {
+    position: relative;
+    width: 100%;
+    float: left;
+    height: 50px;
+    line-height: 10px;
+}
+.downloadButton {
+    position: relative;
+    height: 30px;
+    left : 400px;
+    top:0px;
+    margin-bottom: 30px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}

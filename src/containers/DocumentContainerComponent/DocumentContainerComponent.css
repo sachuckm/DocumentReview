@@ -1,0 +1,24 @@
+.docList {
+position: absolute;
+width:503px;
+left: 0;
+top:0;
+height: 100%;
+background-color:bisque;
+overflow: scroll;
+    overflow-x: hidden;
+}
+.Searchdoc{
+    position: absolute;
+    width: 503px;
+    height:70px;
+    left:0;
+    top:00px;
+    font-family: "Poppins-Regular";
+    color:green;
+    font-size:30px;
+    border: 2px solid #3DA56B;
+    outline: 0;
+    border-width: 0 0 2px;
+    background-color: azure;
+   }

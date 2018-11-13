@@ -1,0 +1,90 @@
+.containerdoc {
+position: relative;
+width:503px;
+height: 80px;
+background-color :aqua;
+text-align: center;
+}
+.nameField {
+    position: absolute;
+    left: 85px;
+    top: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 23px;
+}
+.line {
+    position: absolute;
+    top:71px;
+    width:100%;
+}
+.imgThumbsUp {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    left: 900px;
+    top:14px;
+}
+.selectedGreen {
+    background-color: green;
+}
+.selectedRed {
+    background-color:indianred;
+}
+.imgThumbsDown {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 970px;
+    top:20px;
+    border-radius: 20%;
+}
+.countUp {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 30px;
+    top:-15px;
+    font-size: 30px;
+}
+.countDown {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 30px;
+    top:-15px;
+    font-size: 30px;
+}
+.imgThumbsDownList {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 400px;
+    top:20px;
+    border-radius: 20%;
+}
+.imgThumbsUpList {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 330px;
+    top:20px;
+    border-radius: 20%;
+}
+.container_display {
+    position: relative;
+width:100%;
+height: 80px;
+background-color: bisque;
+text-align: center;
+}
+.containerdocrelative {
+    position: relative;
+    width:503px;
+    height: 80px;
+    top: 75px;
+    background-color :aqua;
+    text-align: center;
+    }
+    .selected {
+        background-color: bisque;
+    }
