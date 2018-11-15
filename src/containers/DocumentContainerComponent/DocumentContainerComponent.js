@@ -8,15 +8,11 @@ import toLower from 'lodash/toLower';
 import findIndex from 'lodash/findIndex';
 import merge from 'lodash/merge';
 import FileDisplayContainer from './../fileDisplayContainer/FileDisplayContainer';
-import WordExtractor from 'word-extractor';
 
 const sampleWordDoc1 = require('./../../resource/sample1.docx');
 const sampleWordDoc2 = require('./../../resource/sample2.docx');
 const sampleWordDoc3 = require('./../../resource/sample3.docx');
 const sampleWordDoc4 = require('./../../resource/sample4.docx');
-
-
-
 
 export default class DocumentContainerComponent extends Component {
     constructor(props) {
@@ -45,20 +41,13 @@ export default class DocumentContainerComponent extends Component {
         if (this.props.selectedDoc.id === item.id && item.isSelected === this.props.selectedDoc.isSelected) {
           item.isSelected = true
         } else {  item.isSelected = false; }
-        var extractor = new WordExtractor();
-        var extracted = extractor.extract(sampleWordDoc1);
-        extracted.then((doc) => {
-          console.log(doc.getBody());
-        });
+        
             if (includes(toLower(item.name), toLower(event.target.value))) 
             return item
       })
       this.setState({Seachid : event.target.value})
       if (searchArray.length !== this.state.searchedNames.length)
       this.setState({searchedNames : searchArray})
-
-      
-
     }
     docSelected (event, selectedItem) {
       const updatedItems = this.state.searchedNames.map((item) => {
@@ -70,7 +59,18 @@ export default class DocumentContainerComponent extends Component {
         if (item.id === selectedItem.id) return item;
         })
       this.setState({searchedNames: updatedItems})
+      //this.fetchDocuments(updatedItem)
       this.props.selectDocumentAction(updatedItem);
+    }
+    fetchDocuments(items) {
+     // items.docList.map((item) => {
+        //this.props.postMethod('./sample1.docx');
+        this.props.postMethod('./sample1.docx', () => {
+          console.log("Product updated successfully")
+      }, (error) => {
+         console.log("Update Failed"+error);
+      })
+     // })
     }
     componentDidMount() {
       let localst = JSON.parse(localStorage.getItem('state'));
@@ -139,12 +139,13 @@ export default class DocumentContainerComponent extends Component {
         </DocInfoCard>);
         const documentsList = (<div>
         <input placeholder="Search Documents"  onChange={this.changecapture} value={this.state.Seachid} className="Searchdoc" type="text" />
+        <div className = "docList">
         {list}
+        </div>
         </div>) 
       return (
-        <div> <div className = "docList">
+        <div> 
        {documentsList}
-        </div>
         <FileDisplayContainer 
         selectedDoc =  {this.props.selectedDoc}
         statusUpdate = {this.statusUpdate.bind(this)}

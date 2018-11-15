@@ -1,24 +1,26 @@
 .docList {
 position: absolute;
-width:503px;
+width:489px;
 left: 0;
-top:0;
-height: 100%;
-background-color:bisque;
-overflow: scroll;
-    overflow-x: hidden;
+top:85px;
+max-height: 93%;
+overflow: hidden;
+border-radius: 20px;
 }
 .Searchdoc{
     position: absolute;
-    width: 503px;
-    height:70px;
-    left:0;
-    top:00px;
+    width: 469px;
+    height: 65px;
+    left: 0;
+    top: 00px;
+    padding-left: 20px;
     font-family: "Poppins-Regular";
-    color:green;
-    font-size:30px;
-    border: 2px solid #3DA56B;
+    color: black;
+    font-size: 30px;
+    border: 2px solid black;
     outline: 0;
     border-width: 0 0 2px;
-    background-color: azure;
+    background-color: whitesmoke;
+    opacity: 0.8;
+    border-radius: 30px;
    }

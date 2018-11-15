@@ -1,19 +1,21 @@
 import DocumentContainerComponent from "./DocumentContainerComponent";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { selectDocumentAction} from './../../actions/userAction';
+import { selectDocumentAction, postMethod} from './../../actions/userAction';
 
 
 const mapStateToProps = (state) => {
   return {
         selectedDoc: state.userReducer.selectedDoc,
-        selectedFileId: state.userReducer.selectedFileId
+        selectedFileId: state.userReducer.selectedFileId,
+        text: state.userReducer.text
   };
 
 };
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    selectDocumentAction
+    selectDocumentAction,
+    postMethod
   }, dispatch);
 
 };

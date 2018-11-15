@@ -7,6 +7,10 @@ export const userReducer = (state = {}, action) => {
         ...state,
         selectedDoc: action.selectedDoc,
       };
+      case "FETCH_POST_SUCCESS":
+      return {
+        text: action.text
+      }
     default:
       return state;
     }

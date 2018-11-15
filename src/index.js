@@ -36,7 +36,7 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
     applyMiddleware(thunk)
   );
-  store.subscribe(() => saveLocalStorage(store.getState()))
+ // store.subscribe(() => saveLocalStorage(store.getState()))
 ReactDOM.render(
 <Provider store={store}>
 <App />

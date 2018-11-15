@@ -41,9 +41,11 @@ onKeyPressEnter(e) {
   docSelected = {this.docSelected.bind(this)}
   statusSelected = {this.statusSelected.bind(this)}
   type = "display"
+  openLink = {this.openLink.bind(this)}
   status = {file.status}
   name = {file.filename}
   id = {file.id}
+  link = {file.link}
 
   cssClassName ="container_display"
 

@@ -3,15 +3,3 @@
     height: 50px;
     border-radius: 20%;  
 }
-.selectedGreen {
-    background-color: green;
-    width: 50px;
-    height: 60px;
-    border-radius: 5px;
-}
-.selectedred {
-    background-color: red;
-    width: 50px;
-    height: 60px;
-    border-radius: 5px;
-}
