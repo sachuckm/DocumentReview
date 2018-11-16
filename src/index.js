@@ -6,7 +6,8 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import App from './containers/App';
 import reducers from './reducers';
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/font-awesome/css/font-awesome.min.css'; 
 //import registerServiceWorker from './registerServiceWorker';
 
 function saveLocalStorage(state) {

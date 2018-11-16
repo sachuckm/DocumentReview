@@ -44,9 +44,8 @@ onKeyPressEnter(e) {
   openLink = {this.openLink.bind(this)}
   status = {file.status}
   name = {file.filename}
-  id = {file.id}
   link = {file.link}
-
+  id = {file.id}
   cssClassName ="container_display"
 
   ></DocInfoCard>
@@ -56,7 +55,7 @@ onKeyPressEnter(e) {
    /> </div>)
   })
       return (
-        <div className = "displayArea"> {fileList}  </div>
+        <div className = "displayArea align-self-end"> {fileList}  </div>
       );
     }
   }

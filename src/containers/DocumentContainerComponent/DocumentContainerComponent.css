@@ -8,11 +8,10 @@ overflow: hidden;
 border-radius: 20px;
 }
 .Searchdoc{
-    position: absolute;
-    width: 469px;
+
     height: 65px;
     left: 0;
-    top: 00px;
+    margin-bottom: 20px;
     padding-left: 20px;
     font-family: "Poppins-Regular";
     color: black;
@@ -22,5 +21,24 @@ border-radius: 20px;
     border-width: 0 0 2px;
     background-color: whitesmoke;
     opacity: 0.8;
-    border-radius: 30px;
    }
+   .list-group{
+    padding-left: 100px;
+    max-height: 100%;
+    overflow:scroll;
+    overflow-x: hidden;
+}
+.rounded {
+    border-radius: 20px;
+}
+.list-group-item {
+    
+    min-height: 75px;
+    font-family: "Poppins-Regular";
+    padding-left: 30px; 
+}
+.active  {
+
+    background-color: grey !important;
+  
+  }

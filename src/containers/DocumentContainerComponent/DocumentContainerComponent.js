@@ -84,7 +84,6 @@ export default class DocumentContainerComponent extends Component {
      
       this.setState({searchedNames: this.state.names});
     }
-
     statusUpdate(fileId, status ) {
       let isstatusNeedsToUpdate = false;
       console.log(this.state.searchedNames)
@@ -123,8 +122,36 @@ export default class DocumentContainerComponent extends Component {
       this.setState({searchedNames: merge(this.state.searchedNames, updatedItem)})
 
     }
+    updateFullStatus(id, status) {
+     const index = findIndex(this.state.searchedNames, {id: this.props.selectedDoc.id});
+     
+        let updatedItem = this.state.searchedNames.filter((item) => {
+          if(id === item.id) {
+            if (status) {
+              item.approved = item.docList.length;
+              item.rejected = 0;
+            } else {
+              item.rejected = item.docList.length;
+              item.approved = 0
+            }
+            item.docList.map((file) => {
+              file.status = status;
+            })
+          }
+          return item
+        });
+      this.setState({searchedNames: merge(this.state.searchedNames, updatedItem)})
+          
+    }
+    statusSelected(event, fileId, status, id) {
+      if (id) {
+        this.updateFullStatus(id, status);
+      }
+    }
     render() {
       const list = this.state.searchedNames.map((item, index) =>
+        (<div className={`${item.isSelected ? 'active' :''} list-group-item`}>
+        <a href="#" className="list-group-item-action align-self-end">
         <DocInfoCard 
             docSelected = {this.docSelected.bind(this)}
             img = {item.img}
@@ -132,21 +159,29 @@ export default class DocumentContainerComponent extends Component {
             type = "list"
             rejected = {item.rejected}
             approved = {item.approved}
-            isSelected ={item.isSelected}
             cssClassName ="containerdocrelative"
-             id={item.id}
+            statusSelected = {this.statusSelected.bind(this)} 
+            id={item.id}
             >
-        </DocInfoCard>);
-        const documentsList = (<div>
-        <input placeholder="Search Documents"  onChange={this.changecapture} value={this.state.Seachid} className="Searchdoc" type="text" />
-        <div className = "docList">
+        </DocInfoCard>
+        <button type="button" class="btn btn-primary mr-2">
+        Approved <span className="badge badge-light">{item.approved }</span>
+        </button>
+        <button type="button" class="btn btn-primary">
+        Rejeced <span className="badge  badge-light">{item.rejected}</span>
+        </button>
+        </a>
+        </div>));
+        const documentsList = (<div className ="w-25  ">
+        <input placeholder="Search Documents"  onChange={this.changecapture} value={this.state.Seachid} className="Searchdoc w-100 position-sticky rounded" type="text" />
+        <div className ="list">
         {list}
         </div>
         </div>) 
       return (
-        <div> 
+        <div className ="list-group font-weight-bold "> 
        {documentsList}
-        <FileDisplayContainer 
+       <FileDisplayContainer 
         selectedDoc =  {this.props.selectedDoc}
         statusUpdate = {this.statusUpdate.bind(this)}
         />
